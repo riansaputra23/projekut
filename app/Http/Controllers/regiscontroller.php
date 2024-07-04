@@ -23,6 +23,6 @@ class regiscontroller extends Controller
 
         User::create($validatedData);
 
-        return redirect('layouts.login.login')->with('success', 'Register Berhasil');
+        return redirect('login')->with('success', 'Register Berhasil');
     }
 }

@@ -31,14 +31,16 @@ Route::get('/eror', function () {
 Route::get('/dashboard', [GajiController::class, 'index']);
 Route::resource('/dashboard/gaji', GajiController::class);
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+
+// });
 
 Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
 Route::post('/home/create', [HomeController::class, 'store'])->name('home.store');
@@ -50,7 +52,8 @@ Route::get('/dashboardhome', [DashboardHome::class, 'index']);
 
 
 
-Route::get('/profile', [ContactController::class, 'profile.index']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contactsend');
 
 Route::get('/login', [logincontroller::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [logincontroller::class,'authenticate']);

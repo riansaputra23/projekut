@@ -24,8 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $home = home::all();
-        return view('home', ['home'=>$home]);
+
+        $homes = home::all();
+        // dd($homes);
+        return view('home', (['homes' => $homes]));
     }
 
 //     public function index()

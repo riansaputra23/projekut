@@ -7,7 +7,7 @@
         <div class="row gx-5 align-items-center">
             <div class="col-xxl-5">
                 <!-- Header text content-->
-                @foreach ($home as $home)
+                @foreach ($homes as $home)
                     
                 <div class="text-center text-xxl-start">
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">{{$home->title_1}}</div></div>
@@ -28,7 +28,7 @@
                         <!-- Watch a tutorial on how to do this on YouTube (link)-->
                         <img class="profile-img" src="{{ asset('storage/' .$home->image_path) }} " alt="..." />
                         <div class="dots-1">
-                            
+
                             <!-- SVG Dots-->
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
                                 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
@@ -143,6 +143,28 @@
                     </div>
                 </div>
             </div>
+            <section class="bg-light py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xxl-8">
+                            <div class="text-center my-5">
+                            @if (! is_null($home))
+                                
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{$home->about_me_title}}</span></h2>
+                                <p class="lead fw-light mb-4"></p>
+                                <p class="text-muted">Provinsi jambi</p>
+                                <div class="d-flex justify-content-center fs-2 gap-4">
+                                    @else
+                                    <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
+                                    <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href="#!"><i class="bi bi-github"></i></a>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </header>
